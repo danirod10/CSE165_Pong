@@ -1,3 +1,7 @@
+#Note this is a slightly modifed git ignore taken from Godot's own open source code
+#It should keep the repositories fairly clean, most of this we don't need but it doesn't
+#Hurt to leave it for now
+
 
 # Godot-specific ignores
 .import/
@@ -115,10 +119,7 @@ platform/windows/godot_res.res
 # Scons progress indicator
 .scons_node_count
 
-# GDNative ignores
-cpp_bindings/
-godot_headers/
-godot-cpp/
+
 
 # Compiled Object files
 *.slo
@@ -149,3 +150,9 @@ godot-cpp/
 *.exe
 *.out
 *.app
+
+
+#Our groups additions
+*.pck
+*.cfg 
+*.x86_64 
