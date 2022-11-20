@@ -28,7 +28,7 @@ margin_bottom = 400.0
 color = Color( 0.141176, 0.152941, 0.164706, 1 )
 
 [node name="Left" type="Area2D" parent="."]
-modulate = Color( 0, 1, 1, 1 )
+modulate = Color( 0, 1, 0.0862745, 1 )
 position = Vector2( 70, 200 )
 script = ExtResource( 1 )
 
@@ -39,7 +39,7 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Right" type="Area2D" parent="."]
-modulate = Color( 1, 0, 1, 1 )
+modulate = Color( 1, 0.352941, 0, 1 )
 position = Vector2( 570, 200 )
 script = ExtResource( 1 )
 
@@ -87,7 +87,6 @@ shape = SubResource( 4 )
 [node name="Floor" type="Area2D" parent="."]
 position = Vector2( 320, 410 )
 script = ExtResource( 8 )
-bounce_direction = -1
 
 [node name="Collision" type="CollisionShape2D" parent="Floor"]
 shape = SubResource( 4 )
