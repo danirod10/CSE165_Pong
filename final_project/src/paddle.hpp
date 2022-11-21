@@ -11,7 +11,7 @@
 class Paddle : public godot::Area2D {
 	GODOT_CLASS(Paddle, godot::Area2D)
 
-	const int MOVE_SPEED = 100;
+	int MOVE_SPEED;
 
 	int _ball_dir;
 	godot::String _up;
@@ -22,7 +22,7 @@ class Paddle : public godot::Area2D {
 	real_t _screen_size_y;
 
 public:
-	void _init() {}
+	void _init();
 	void _ready();
 	void _process(const double p_delta);
 	void _on_area_entered(Ball *p_area);

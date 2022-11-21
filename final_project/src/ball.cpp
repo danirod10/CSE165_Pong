@@ -1,5 +1,10 @@
 #include "ball.hpp"
 
+void Ball::_init(){
+	DEFAULT_SPEED = 100;
+	_speed = DEFAULT_SPEED;
+}
+
 void Ball::_ready() {
 	_initial_pos = get_position();
 }
@@ -21,4 +26,5 @@ void Ball::_register_methods() {
 	godot::register_method("_ready", &Ball::_ready);
 	godot::register_method("_process", &Ball::_process);
 	godot::register_method("reset", &Ball::reset);
+	godot::register_property<Ball, real_t>("DEFAULT_SPEED", &Ball::DEFAULT_SPEED, 100);
 }

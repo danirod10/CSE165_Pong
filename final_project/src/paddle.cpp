@@ -1,5 +1,10 @@
 #include "paddle.hpp"
 
+void Paddle::_init() {
+	MOVE_SPEED = 100;
+}
+
+
 void Paddle::_ready() {
 	_input = godot::Input::get_singleton();
 	_random = (godot::Ref<godot::RandomNumberGenerator>)godot::RandomNumberGenerator::_new();
@@ -34,4 +39,5 @@ void Paddle::_register_methods() {
 	godot::register_method("_ready", &Paddle::_ready);
 	godot::register_method("_process", &Paddle::_process);
 	godot::register_method("_on_area_entered", &Paddle::_on_area_entered);
+	godot::register_property<Paddle, int>("MOVE_SPEED",&Paddle::MOVE_SPEED, 100);
 }
