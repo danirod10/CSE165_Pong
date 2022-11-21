@@ -34,8 +34,8 @@ python3 -m pip install scons
 ```
 
 The fourth dependancey needed is git. If you don't have git installed or don't know if you have 
-git installed please check the guide for downloading over at [GitHub]("https://github.com/git-guides/install-git")(or just google search: install git, it isn't hard to find but it would take up to
-much space in this read me)
+git installed please check the guide for downloading over at [GitHub]("https://github.com/git-guides/install-git") or just google search: install git, it isn't hard to find but it would take up to
+much space in this readme.
 
 The final dependency is the Godot Editor which can simply be installed from [Godot's offical website](https://godotengine.org/download)
 
