@@ -6,14 +6,15 @@ The game is compatible with Windows, Linux, or OSX
 
 
 
-##Dependencies
+## Dependencies
 Before cloning this repository and building this project please make sure you have all of the following:
 - git
 - python
 - pip
 - scons
 - Godot Editor
-###Quick Guide for all Dependencies
+
+### Quick Guide for all Dependencies
 First make sure you have python installed using the following command in your terminal on Linux/MacOS:
 ```
 python3 --version
@@ -69,7 +70,7 @@ export and export the project to the platform you're computer is running on.
 
 
 This creates the file `Pong_project.[appropriate executable file type]` 
-Which you need to double click to start the game 
+which you need to double click to start the game 
 
 
 ## How to play?
