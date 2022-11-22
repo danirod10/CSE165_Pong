@@ -12,8 +12,10 @@ class Paddle : public godot::Area2D {
 	GODOT_CLASS(Paddle, godot::Area2D)
 
 	int MOVE_SPEED;
-
-	int _ball_dir;
+	
+	//_ball_dir probably not needed
+	//int _ball_dir;
+	
 	godot::String _up;
 	godot::String _down;
 	godot::Input *_input;

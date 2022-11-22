@@ -1,7 +1,9 @@
 #include "ceiling_floor.hpp"
 
 void CeilingFloor::_on_area_entered(Ball *p_ball) {
-	if (p_ball->get_name() == "Ball") {
+	//Totally breaks if I don't have the if statment checking for the balls's name
+	//No clude why and I can't find documentation on it, so I can't remove it
+	if ((p_ball->get_name() == "Ball1") || (p_ball->get_name() == "Ball2")) {
 		p_ball->direction = (p_ball->direction + godot::Vector2(0, (real_t)bounce_direction)).normalized();
 	}
 }

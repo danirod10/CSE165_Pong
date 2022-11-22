@@ -7,15 +7,22 @@
 class Ball : public godot::Area2D {
 	GODOT_CLASS(Ball, godot::Area2D)
 	
-	//testing something here
-	//const real_t DEFAULT_SPEED;
+	//The defaults are not left as consts, so I can register them as properties Godot's Editor can edit
+	//leaves more options open and doesn't require any extra c++ files when I want to 
+	//have two balls moving at different speeds or different directions
 	real_t DEFAULT_SPEED;
+	godot::Vector2 DEFAULT_DIRECTION;
+	
+	
 	real_t _speed;
 	godot::Vector2 _initial_pos;
 
 public:
-	godot::Vector2 direction = godot::Vector2(-1, 0);
-
+	//made public so ceiling_floor.cpp and paddle.cpp can access Ball.direction easily
+	//may make private and use get() and set() functions
+	//Is initialized in _init() along with DEAFULT_DIRECTION
+	godot::Vector2 direction;
+	
 	void _init();
 	void _ready();
 	void _process(const double p_delta);

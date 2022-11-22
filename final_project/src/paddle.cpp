@@ -10,14 +10,20 @@ void Paddle::_ready() {
 	_random = (godot::Ref<godot::RandomNumberGenerator>)godot::RandomNumberGenerator::_new();
 	_random->randomize();
 	_screen_size_y = get_viewport_rect().size.y;
+	
+	//This code relies on the use of project godot's setting to create an input map, where the 
+	//names of the inputs are registered as [name of node script is attached too]_move_up and 
+	//[name of node script is attached too]_move_down
+	//Currently the Nodes are named Player1 and Player2
 	godot::String n = godot::String(get_name()).to_lower();
 	_up = n + "_move_up";
 	_down = n + "_move_down";
-	if (n == "left") {
-		_ball_dir = 1;
-	} else {
-		_ball_dir = -1;
-	}
+	
+	//if (n == "Player1") {
+		//_ball_dir = 1;
+	//} else {
+		//_ball_dir = -1;
+	//}
 }
 
 void Paddle::_process(const double delta) {
@@ -29,9 +35,13 @@ void Paddle::_process(const double delta) {
 }
 
 void Paddle::_on_area_entered(Ball *p_ball) {
-	if (p_ball->get_name() == "Ball") {
-		// Assign new direction.
-		p_ball->direction = godot::Vector2((real_t)_ball_dir, _random->randf() * 2 - 1).normalized();
+	// Assign new direction.
+	//Doesn't break like the other objects if I don't have this if statment
+	//Literally zero clue why though so I'll keep it for consistency
+	if ((p_ball->get_name() == "Ball1") || (p_ball->get_name() == "Ball2")) {
+		real_t opposite_x = -(p_ball->direction.x);
+		p_ball->direction = godot::Vector2(opposite_x, _random->randf() * 2 - 1).normalized();
+		//(real_t)_ball_dir
 	}
 }
 
