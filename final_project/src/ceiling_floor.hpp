@@ -7,12 +7,13 @@
 #include "ball.hpp"
 
 class CeilingFloor : public godot::Area2D {
+private:
 	GODOT_CLASS(CeilingFloor, godot::Area2D)
 
 public:
 	int bounce_direction = 1;
 
-	void _init() {}
+	void _init(){};
 	void _on_area_entered(Ball *p_ball);
 
 	static void _register_methods();
