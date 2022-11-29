@@ -32,28 +32,30 @@ Portions of this software are copyright © 1996-2022 The FreeType Project (www.f
 Some of our code is from the GDNative Tutorials, and our Scons files is taken from them (which makes our build set up similar). So we have included the licensing for it (even though it's the same license and through the Godot)
 
 
-Copyright (c) 2007-2020 Juan Linietsky, Ariel Manzur.
-Copyright (c) 2014-2020 Godot Engine contributors.
+    Copyright (c) 2007-2020 Juan Linietsky, Ariel Manzur.
+    Copyright (c) 2014-2020 Godot Engine contributors.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 ## Music:
-Militaire Electronic by Kevin MacLeod is licensed under a Creative Commons Attribution 4.0 license. https://creativecommons.org/licenses/by/4.0/
+### Militaire Electronic
+    Militaire Electronic by Kevin MacLeod is licensed under a Creative Commons Attribution 4.0 license. https://creativecommons.org/licenses/by/4.0/
 
-Source: http://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100442
+    Source: http://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100442
 
-Artist: http://incompetech.com/
+    Artist: http://incompetech.com/
 
-Fluffing a Duck by Kevin MacLeod is licensed under a Creative Commons Attribution 4.0 license. https://creativecommons.org/licenses/by/4.0/
+### Fluffing a Duck
+    Fluffing a Duck by Kevin MacLeod is licensed under a Creative Commons Attribution 4.0 license. https://creativecommons.org/licenses/by/4.0/
 
-Source: http://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100768
+    Source: http://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100768
 
-Artist: http://incompetech.com/
+    Artist: http://incompetech.com/
 
 ## Fonts:
 Font used is: Oxanium-SemiBold, it is released under Open Font License. 
