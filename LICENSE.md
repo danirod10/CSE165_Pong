@@ -49,6 +49,11 @@ Source: http://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100442
 
 Artist: http://incompetech.com/
 
+Fluffing a Duck by Kevin MacLeod is licensed under a Creative Commons Attribution 4.0 license. https://creativecommons.org/licenses/by/4.0/
+
+Source: http://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100768
+
+Artist: http://incompetech.com/
 
 ## Fonts:
 Font used is: Oxanium-SemiBold, it is released under Open Font License. 

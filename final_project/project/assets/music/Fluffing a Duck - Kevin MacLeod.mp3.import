@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Fluffing a Duck - Kevin MacLeod.mp3-798f4427a7e10ee4396f7ce52b6d06b0.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Fluffing a Duck - Kevin MacLeod.mp3"
+dest_files=[ "res://.import/Fluffing a Duck - Kevin MacLeod.mp3-798f4427a7e10ee4396f7ce52b6d06b0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

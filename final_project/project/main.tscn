@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://pong.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/music/Militaire Electronic - Kevin MacLeod.mp3" type="AudioStream" id=2]
 [ext_resource path="res://gdnativescripts/game_state_controller.gdns" type="Script" id=3]
+[ext_resource path="res://assets/music/Fluffing a Duck - Kevin MacLeod.mp3" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/fonts/Oxanium-ExtraBold.ttf"
@@ -44,7 +45,10 @@ text = "GAME OVER"
 align = 1
 valign = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="GameplayMusic" type="AudioStreamPlayer" parent="."]
 pause_mode = 1
 stream = ExtResource( 2 )
 autoplay = true
+
+[node name="GameOverMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
