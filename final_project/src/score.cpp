@@ -4,7 +4,7 @@ using namespace godot;
 
 
 void Score::_ready(){
-    score_name = get_name();    
+    score_name = get_name();   
 }
 
 void Score::_on_update_score(int new_score, String wall_name){

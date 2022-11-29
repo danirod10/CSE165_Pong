@@ -18,8 +18,7 @@ private:
 	real_t _speed;
 	godot::Vector2 _initial_pos;
 
-	//made public so ceiling_floor.cpp and paddle.cpp can access Ball.direction easily
-	//may make private and use get() and set() functions
+
 	//Is initialized in _init() along with DEAFULT_DIRECTION
 	godot::Vector2 direction;
 public:
@@ -35,4 +34,4 @@ public:
 	static void _register_methods();
 };
 
-#endif // BALL_H
+#endif 

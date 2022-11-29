@@ -14,9 +14,9 @@ public:
 	int bounce_direction = 1;
 
 	void _init(){};
-	void _on_area_entered(Ball *p_ball);
+	void _on_area_entered(Ball *ptr_ball);
 
 	static void _register_methods();
 };
 
-#endif // CEILING_FLOOR_H
+#endif 

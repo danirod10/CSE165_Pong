@@ -22,4 +22,4 @@ public:
 	static void _register_methods();
 };
 
-#endif // SCORE_H
+#endif 

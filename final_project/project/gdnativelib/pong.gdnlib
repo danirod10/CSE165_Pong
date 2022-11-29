@@ -7,9 +7,9 @@ reloadable=true
 
 [entry]
 
-Windows.64="res://gdnative/windows/libpong.dll"
-X11.64="res://gdnative/linux/libpong.so"
-OSX.64="res://gdnative/osx/libpong.dylib"
+Windows.64="res://gdnativelib/windows/libpong.dll"
+X11.64="res://gdnativelib/linux/libpong.so"
+OSX.64="res://gdnativelib/osx/libpong.dylib"
 
 [dependencies]
 

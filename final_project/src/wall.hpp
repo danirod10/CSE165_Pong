@@ -2,6 +2,7 @@
 #define WALL_H
 
 #include <Area2D.hpp>
+#include <Label.hpp>
 #include <Godot.hpp>
 
 #include "ball.hpp"
@@ -14,11 +15,12 @@ private:
 	//will likely also help handle ending the game
 	int score;
 
+
 public:
 
 
 	void _init();
-	void _on_wall_area_entered(Ball* p_area);
+	void _on_wall_area_entered(Ball* ptr_area);
 	void update_score();
 	int get_score();
 	void set_score(int new_score);

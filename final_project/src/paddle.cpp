@@ -33,14 +33,14 @@ void Paddle::_process(const double delta) {
 	set_position(position);
 }
 
-void Paddle::_on_area_entered(Ball *p_ball) {
-	// Assign new direction.
+void Paddle::_on_area_entered(Ball* ptr_ball) {
+	// Give ball randomized dirrection
 	//Doesn't break like the other objects if I don't have this if statment
 	//Literally zero clue why though so I'll keep it for consistency
-	if ((p_ball->get_name() == "Ball1") || (p_ball->get_name() == "Ball2")) {
-		Vector2 cur_direction = p_ball->get_direction();
+	if ((ptr_ball->get_name() == "Ball1") || (ptr_ball->get_name() == "Ball2")) {
+		Vector2 cur_direction = ptr_ball->get_direction();
 		Vector2 new_direction = Vector2(-(cur_direction.x), _random->randf() * 2 - 1).normalized();
-		p_ball->set_direction(new_direction);
+		ptr_ball->set_direction(new_direction);
 	}
 }
 
