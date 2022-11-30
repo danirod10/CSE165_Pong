@@ -7,14 +7,23 @@
 #include <Godot.hpp>
 
 
+#include "goal.hpp"
 #include "wall.hpp"
+#include "score.hpp"
+#include "paddle.hpp"
 
 class GameStateController : public godot::Node {
 private:
 	GODOT_CLASS(GameStateController, godot::Node);
 
-	Wall* ptr_right_wall;
-	Wall* ptr_left_wall;
+	Goal* ptr_right_goal;
+	Goal* ptr_left_goal;
+	Wall* ptr_ceiling;
+	Wall* ptr_floor;
+	Score* ptr_player1_score;
+	Score* ptr_player2_score;
+	Paddle* ptr_player1;
+	Paddle* ptr_player2;
 	godot::SceneTree* root;
     godot::CanvasLayer* game_over_screen;
     godot::AudioStreamPlayer* game_over_music;

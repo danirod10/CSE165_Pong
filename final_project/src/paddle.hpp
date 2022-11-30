@@ -15,7 +15,7 @@ private:
 	/*Not a const since we register it in _register_methods() so Godot can change it through the
 	editor. This makes it easier to test things through Godot since we don't need to recompile our
 	C++ code everytime we want to chnage the movespeed of the paddles*/
-	int MOVE_SPEED;
+	int MOVE_SPEED = 500;
 	
 	
 	godot::String _up;
@@ -26,7 +26,7 @@ private:
 	real_t _screen_size_y;
 
 public:
-	void _init();
+	void _init(){};
 	void _ready();
 	void _process(const double delta);
 	void _on_area_entered(Ball *ptr_area);

@@ -11,7 +11,7 @@ private:
 	//The defaults are not left as consts, so I can register them as properties Godot's Editor can edit
 	//leaves more options open and doesn't require any extra c++ files when I want to 
 	//have two balls moving at different speeds or different directions
-	real_t DEFAULT_SPEED;
+	real_t DEFAULT_SPEED = 500;
 	godot::Vector2 DEFAULT_DIRECTION;
 	
 	

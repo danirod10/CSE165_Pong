@@ -6,8 +6,8 @@
 [ext_resource path="res://gdnativescripts/ball.gdns" type="Script" id=4]
 [ext_resource path="res://assets/images/ball.svg" type="Texture" id=5]
 [ext_resource path="res://assets/images/divider.svg" type="Texture" id=6]
-[ext_resource path="res://gdnativescripts/wall.gdns" type="Script" id=7]
-[ext_resource path="res://gdnativescripts/ceiling_floor.gdns" type="Script" id=8]
+[ext_resource path="res://gdnativescripts/goal.gdns" type="Script" id=7]
+[ext_resource path="res://gdnativescripts/wall.gdns" type="Script" id=8]
 [ext_resource path="res://assets/fonts/Oxanium-SemiBold.ttf" type="DynamicFontData" id=9]
 
 [sub_resource type="RectangleShape2D" id=9]
@@ -64,6 +64,7 @@ shape = SubResource( 9 )
 [node name="Ball1" type="Area2D" parent="."]
 position = Vector2( 640, 360 )
 script = ExtResource( 4 )
+DEFAULT_DIRECTION = Vector2( 1, 0 )
 
 [node name="Sprite" type="Sprite" parent="Ball1"]
 scale = Vector2( 0.1, 0.1 )
@@ -75,7 +76,6 @@ shape = SubResource( 10 )
 [node name="Ball2" type="Area2D" parent="."]
 position = Vector2( 640, 360 )
 script = ExtResource( 4 )
-DEFAULT_DIRECTION = Vector2( 1, 0 )
 
 [node name="Sprite" type="Sprite" parent="Ball2"]
 scale = Vector2( 0.1, 0.1 )
@@ -89,19 +89,19 @@ position = Vector2( 640, 360 )
 scale = Vector2( 0.3, 0.675 )
 texture = ExtResource( 6 )
 
-[node name="LeftWall" type="Area2D" parent="."]
+[node name="LeftGoal" type="Area2D" parent="."]
 position = Vector2( -10, 360 )
 script = ExtResource( 7 )
 
-[node name="Collision" type="CollisionShape2D" parent="LeftWall"]
+[node name="Collision" type="CollisionShape2D" parent="LeftGoal"]
 position = Vector2( -3.1875, 0.5 )
 shape = SubResource( 3 )
 
-[node name="RightWall" type="Area2D" parent="."]
+[node name="RightGoal" type="Area2D" parent="."]
 position = Vector2( 1290, 360 )
 script = ExtResource( 7 )
 
-[node name="Collision" type="CollisionShape2D" parent="RightWall"]
+[node name="Collision" type="CollisionShape2D" parent="RightGoal"]
 position = Vector2( 2.125, 1.5 )
 shape = SubResource( 3 )
 
@@ -115,7 +115,6 @@ shape = SubResource( 4 )
 [node name="Floor" type="Area2D" parent="."]
 position = Vector2( 640, 730 )
 script = ExtResource( 8 )
-bounce_direction = -1
 
 [node name="Collision" type="CollisionShape2D" parent="Floor"]
 position = Vector2( 0, 2.5 )
@@ -142,12 +141,3 @@ margin_bottom = 70.0
 theme = SubResource( 6 )
 text = "Player 2 Score :"
 script = ExtResource( 3 )
-
-[connection signal="area_entered" from="Player1" to="Player1" method="_on_area_entered"]
-[connection signal="area_entered" from="Player2" to="Player2" method="_on_area_entered"]
-[connection signal="area_entered" from="LeftWall" to="LeftWall" method="_on_wall_area_entered"]
-[connection signal="update_score" from="LeftWall" to="Player1Score" method="_on_update_score"]
-[connection signal="area_entered" from="RightWall" to="RightWall" method="_on_wall_area_entered"]
-[connection signal="update_score" from="RightWall" to="Player2Score" method="_on_update_score"]
-[connection signal="area_entered" from="Ceiling" to="Ceiling" method="_on_area_entered"]
-[connection signal="area_entered" from="Floor" to="Floor" method="_on_area_entered"]

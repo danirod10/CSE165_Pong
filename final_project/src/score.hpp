@@ -5,7 +5,7 @@
 #include <Godot.hpp>
 #include <string>
 
-#include "wall.hpp"
+#include "goal.hpp"
 
 class Score : public godot::Label {
 private:

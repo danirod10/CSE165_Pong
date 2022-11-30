@@ -5,7 +5,6 @@ using namespace godot;
 void Ball::_init(){
 	//Initializes the defaults
 	//my set up in Godot breaks if I don't do this
-	DEFAULT_SPEED = 100;
 	_speed = DEFAULT_SPEED;
 	
 	DEFAULT_DIRECTION = Vector2(-1, 0);
@@ -19,7 +18,6 @@ void Ball::_ready() {
 	//Means I don't have do derive a bunch of different class
 	//to make different speeds or default values if I 
 	//want to make multiple unique ping-pong balls
-	_speed = DEFAULT_SPEED;
 	direction = DEFAULT_DIRECTION;
 }
 
@@ -51,6 +49,5 @@ void Ball::_register_methods() {
 	register_method("reset", &Ball::reset);
 	register_method("get_direction", &Ball::get_direction);
 	register_method("set_direction", &Ball::set_direction);
-	register_property<Ball, real_t>("DEFAULT_SPEED", &Ball::DEFAULT_SPEED, 100);
 	register_property<Ball, Vector2>("DEFAULT_DIRECTION", &Ball::DEFAULT_DIRECTION, Vector2(-1, 0));
 }

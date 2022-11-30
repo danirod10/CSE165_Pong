@@ -1,9 +1,9 @@
 #include <Godot.hpp>
 
 #include "ball.hpp"
-#include "ceiling_floor.hpp"
-#include "paddle.hpp"
 #include "wall.hpp"
+#include "paddle.hpp"
+#include "goal.hpp"
 #include "score.hpp"
 #include "game_state_controller.hpp"
 
@@ -21,9 +21,9 @@ extern "C" void GDN_EXPORT godot_gdnative_terminate(godot_gdnative_terminate_opt
 extern "C" void GDN_EXPORT godot_nativescript_init(void *handle) {
 	Godot::nativescript_init(handle);
 	register_class<Ball>();
-	register_class<CeilingFloor>();
-	register_class<Paddle>();
 	register_class<Wall>();
+	register_class<Paddle>();
+	register_class<Goal>();
 	register_class<Score>();
 	register_class<GameStateController>();
 }
