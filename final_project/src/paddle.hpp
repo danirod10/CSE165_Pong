@@ -12,10 +12,8 @@ class Paddle : public godot::Area2D {
 private:
 	GODOT_CLASS(Paddle, godot::Area2D)
 
-	/*Not a const since we register it in _register_methods() so Godot can change it through the
-	editor. This makes it easier to test things through Godot since we don't need to recompile our
-	C++ code everytime we want to chnage the movespeed of the paddles*/
-	int MOVE_SPEED = 500;
+
+	const int MOVE_SPEED = 500;
 	
 	
 	godot::String _up;

@@ -24,12 +24,12 @@ void GameStateController::_ready(){
     ptr_right_goal = get_node<Goal>("Pong/RightGoal");
     ptr_right_goal->connect("end_game", this, "_on_end_game");
     ptr_right_goal->connect("area_entered",ptr_right_goal,"_on_goal_area_entered");
-    ptr_right_goal->connect("update_score",ptr_player2_score,"_on_update_score");
+    ptr_right_goal->connect("update_score",ptr_player1_score,"_on_update_score");
 
     ptr_left_goal = get_node<Goal>("Pong/LeftGoal");
     ptr_left_goal->connect("end_game", this, "_on_end_game");
     ptr_left_goal->connect("area_entered",ptr_left_goal,"_on_goal_area_entered");
-    ptr_left_goal->connect("update_score",ptr_player1_score,"_on_update_score");
+    ptr_left_goal->connect("update_score",ptr_player2_score,"_on_update_score");
 
     //handles the signal connections for the player
     ptr_player1 = get_node<Paddle>("Pong/Player1");
