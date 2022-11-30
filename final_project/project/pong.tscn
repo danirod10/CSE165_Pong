@@ -1,20 +1,21 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://gdnativescripts/paddle.gdns" type="Script" id=1]
-[ext_resource path="res://assets/images/paddle.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/player.svg" type="Texture" id=2]
 [ext_resource path="res://gdnativescripts/score.gdns" type="Script" id=3]
 [ext_resource path="res://gdnativescripts/ball.gdns" type="Script" id=4]
-[ext_resource path="res://assets/images/ball.png" type="Texture" id=5]
-[ext_resource path="res://assets/images/separator.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/ball.svg" type="Texture" id=5]
+[ext_resource path="res://assets/images/divider.svg" type="Texture" id=6]
 [ext_resource path="res://gdnativescripts/wall.gdns" type="Script" id=7]
 [ext_resource path="res://gdnativescripts/ceiling_floor.gdns" type="Script" id=8]
 [ext_resource path="res://assets/fonts/Oxanium-SemiBold.ttf" type="DynamicFontData" id=9]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4, 16 )
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 9, 35 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 4, 4 )
+[sub_resource type="CircleShape2D" id=10]
+
+[sub_resource type="CircleShape2D" id=8]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 13.1875, 384.5 )
@@ -34,58 +35,58 @@ default_font = SubResource( 5 )
 [node name="Background" type="ColorRect" parent="."]
 margin_right = 1280.0
 margin_bottom = 720.0
-color = Color( 0.141176, 0.152941, 0.164706, 1 )
+color = Color( 0.109804, 0.156863, 0.2, 1 )
 
 [node name="Player1" type="Area2D" parent="."]
 modulate = Color( 0, 1, 0.0862745, 1 )
 position = Vector2( 150, 360 )
-scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Player1"]
+scale = Vector2( 0.2, 0.1 )
 texture = ExtResource( 2 )
 
-[node name="Collision" type="CollisionShape2D" parent="Player1"]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
+shape = SubResource( 9 )
 
 [node name="Player2" type="Area2D" parent="."]
 modulate = Color( 1, 0.352941, 0, 1 )
 position = Vector2( 1130, 360 )
-scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Player2"]
+scale = Vector2( 0.2, 0.1 )
 texture = ExtResource( 2 )
 
-[node name="Collision" type="CollisionShape2D" parent="Player2"]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+shape = SubResource( 9 )
 
 [node name="Ball1" type="Area2D" parent="."]
 position = Vector2( 640, 360 )
-scale = Vector2( 2, 2 )
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Ball1"]
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 5 )
 
 [node name="Collision" type="CollisionShape2D" parent="Ball1"]
-shape = SubResource( 2 )
+shape = SubResource( 10 )
 
 [node name="Ball2" type="Area2D" parent="."]
 position = Vector2( 640, 360 )
-scale = Vector2( 2, 2 )
 script = ExtResource( 4 )
 DEFAULT_DIRECTION = Vector2( 1, 0 )
 
 [node name="Sprite" type="Sprite" parent="Ball2"]
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 5 )
 
 [node name="Collision" type="CollisionShape2D" parent="Ball2"]
-shape = SubResource( 2 )
+shape = SubResource( 8 )
 
-[node name="Separator" type="Sprite" parent="."]
+[node name="Divider" type="Sprite" parent="."]
 position = Vector2( 640, 360 )
-scale = Vector2( 1, 1.8 )
+scale = Vector2( 0.3, 0.675 )
 texture = ExtResource( 6 )
 
 [node name="LeftWall" type="Area2D" parent="."]

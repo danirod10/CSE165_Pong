@@ -17,7 +17,7 @@ proper documentation of the game engine and the third party software it uses.
 
 ## Third Parties in Godot Engine that reqiure attribuition:
 ### Free Type:
-Portions of this software are copyright © 1996-2022 The FreeType Project (www.freetype.org). All rights reserved.
+    Portions of this software are copyright © 1996-2022 The FreeType Project (www.freetype.org). All rights reserved.
 
 ## Mbed TLS:
     Copyright The Mbed TLS Contributors
@@ -64,4 +64,4 @@ Find it at [https://sev.dev/fonts/oxanium/](https://sev.dev/fonts/oxanium/) or a
 [https://www.dafont.com/oxanium.font](https://www.dafont.com/oxanium.font)
 
 ## Images:
-TO BE ADDED
+All of the images used were made by Kieran Pfann in Inkscape. As of right now there is no licensing on them

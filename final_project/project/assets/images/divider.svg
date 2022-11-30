@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="8.4900484mm"
+   height="282.42209mm"
+   viewBox="0 0 8.4900484 282.42209"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend"
+       refX="0"
+       refY="0"
+       orient="auto">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path3543" />
+    </marker>
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-89.648787,-13.957039)">
+    <path
+       id="rect868"
+       style="fill:#cb6f91;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-linejoin:round"
+       d="m 89.748787,14.057039 h 8.290049 V 296.27912 h -8.290049 z" />
+  </g>
+</svg>

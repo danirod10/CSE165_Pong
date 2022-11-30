@@ -28,4 +28,4 @@ public:
 	static void _register_methods();
 };
 
-#endif // WALL_H
+#endif 

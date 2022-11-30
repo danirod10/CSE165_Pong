@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/paddle.png-f4078316504310cfc14767d0ad1183d7.stex"
+path="res://.import/divider.svg-6a2731e0c8cd634a00feece5bba17ace.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/paddle.png"
-dest_files=[ "res://.import/paddle.png-f4078316504310cfc14767d0ad1183d7.stex" ]
+source_file="res://assets/images/divider.svg"
+dest_files=[ "res://.import/divider.svg-6a2731e0c8cd634a00feece5bba17ace.stex" ]
 
 [params]
 

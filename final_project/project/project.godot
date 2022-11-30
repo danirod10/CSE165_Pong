@@ -13,7 +13,7 @@ config_version=4
 config/name="CSE 165 Final Project: Pong"
 config/description="We made a simple game of pong using Godot and GDNative C++. The framework of the game is done using Godot scenes, with all of the scripting done in C++ as a GDNative Plugin"
 run/main_scene="res://main.tscn"
-config/icon="res://assets/images/icon.png"
+config/icon="res://assets/images/work_in_progress_logo.svg"
 
 [display]
 
