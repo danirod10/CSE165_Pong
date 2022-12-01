@@ -56,6 +56,7 @@ shape = SubResource( 9 )
 
 [node name="Ball1" type="Area2D" parent="."]
 position = Vector2( 640, 360 )
+z_index = 1
 script = ExtResource( 4 )
 DEFAULT_DIRECTION = Vector2( 1, 0 )
 
@@ -68,6 +69,7 @@ shape = SubResource( 10 )
 
 [node name="Ball2" type="Area2D" parent="."]
 position = Vector2( 640, 360 )
+z_index = 1
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Ball2"]

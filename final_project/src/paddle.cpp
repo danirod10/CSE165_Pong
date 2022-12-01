@@ -44,6 +44,11 @@ void Paddle::_on_area_entered(Ball* ptr_ball) {
 	}
 }
 
+
+void Paddle::reset() {
+	set_position(initial_pos);
+}
+
 Vector2 Paddle::get_initial_position(){
 	return initial_pos;
 }

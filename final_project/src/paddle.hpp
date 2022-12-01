@@ -28,6 +28,7 @@ public:
 	void _ready();
 	void _process(const double delta);
 	void _on_area_entered(Ball *ptr_area);
+	void reset();
 	godot::Vector2 get_initial_position();
 	void set_initial_position(godot::Vector2 new_inital_pos);
 

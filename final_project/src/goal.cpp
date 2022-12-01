@@ -40,6 +40,8 @@ int Goal::get_score(){
 
 void Goal::set_score(int new_score){
 	score = new_score;
+	//Testing something here
+	emit_signal("update_score",score, this->get_name());
 }
 
 void Goal::_register_methods() {

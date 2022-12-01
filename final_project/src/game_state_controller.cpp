@@ -56,7 +56,7 @@ void GameStateController::_ready(){
 
     //prepign for _on_restart_game()
     ptr_ball1 = get_node<Ball>("Pong/Ball1");
-    ptr_ball1 = get_node<Ball>("Pong/Ball2");
+    ptr_ball2 = get_node<Ball>("Pong/Ball2");
     restart_button = get_node<Button>("GameOverScreen/RestartButton");
     restart_button->connect("pressed", this,"_on_restart_game");
  }
@@ -94,38 +94,31 @@ void GameStateController::_on_end_game(String goal_name){
 }
 
 void GameStateController::_on_restart_game(){
-    /*This may go through multiple itterations depending on how Godot handles things here*/
+
     
     //resets music
     game_over_music->_set_playing(false);
 
-    root->set_pause(false);
-
-    //resets players and balls to default position
-    Vector2 temp = ptr_player1->get_initial_position();
-    ptr_player1->set_position(temp);
-
-    temp = ptr_player2->get_initial_position();
-    ptr_player2->set_position(temp);
-
-    temp = ptr_ball1->get_initial_position();
-    ptr_ball1->reset();
-
-    temp = ptr_ball1->get_initial_position();
-    ptr_ball2->reset();
-
-    //resets score
-    ptr_player1_score->set_text("Player 1 Score : ");
-    ptr_player2_score->set_text("Player 2 Score : ");
+    //resets score, updates the label too since set_score emits the signal update_score
     ptr_left_goal->set_score(0);
     ptr_right_goal->set_score(0);
+
+    //resets all moving nodes to initial positions 
+    ptr_ball1->reset();
+    ptr_ball2->reset();
+    ptr_player1->reset();
+    ptr_player2->reset();
+
 
     // //called second to last just so players don't see the reset
     game_over_screen->set_visible(false);
 
-    // //Balls now have movement unpaused
+    root->set_pause(false);
     ptr_ball1->set_motion_paused(false);
     ptr_ball2->set_motion_paused(false);
+
+
+
 }
 
 
