@@ -19,6 +19,7 @@ public:
     void _ready();
 	void _on_update_score(int new_score, godot::String wall_name);
 
+
 	static void _register_methods();
 };
 

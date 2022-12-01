@@ -29,7 +29,7 @@ void Goal::update_score(){
 	//game ends at a score of 5
 	if(score == 5){
 		//The class GameStateController handels this signal
-		emit_signal("end_game");
+		emit_signal("end_game", this->get_name());
 	}
 
 }
@@ -46,8 +46,8 @@ void Goal::_register_methods() {
 
 	register_method("_on_goal_area_entered", &Goal::_on_goal_area_entered);
 	register_method("update_score", &Goal::update_score);
-	register_method("get_direction", &Goal::get_score);
+	register_method("get_score", &Goal::get_score);
 	register_method("set_score", &Goal::set_score);
 	register_signal<Goal>((char*)"update_score", "Score", GODOT_VARIANT_TYPE_INT, "Goal Name", GODOT_VARIANT_TYPE_STRING);
-	register_signal<Goal>((char*)"end_game");
+	register_signal<Goal>((char*)"end_game", "Goal Name", GODOT_VARIANT_TYPE_STRING);
 }

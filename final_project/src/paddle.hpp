@@ -20,7 +20,7 @@ private:
 	godot::String _down;
 	godot::Input *_input;
 	godot::Ref<godot::RandomNumberGenerator> _random;
-
+	godot::Vector2 initial_pos;
 	real_t _screen_size_y;
 
 public:
@@ -28,6 +28,8 @@ public:
 	void _ready();
 	void _process(const double delta);
 	void _on_area_entered(Ball *ptr_area);
+	godot::Vector2 get_initial_position();
+	void set_initial_position(godot::Vector2 new_inital_pos);
 
 	static void _register_methods();
 };

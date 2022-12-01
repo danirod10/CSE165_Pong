@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://gdnativescripts/paddle.gdns" type="Script" id=1]
 [ext_resource path="res://assets/images/player.svg" type="Texture" id=2]
@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/images/divider.svg" type="Texture" id=6]
 [ext_resource path="res://gdnativescripts/goal.gdns" type="Script" id=7]
 [ext_resource path="res://gdnativescripts/wall.gdns" type="Script" id=8]
-[ext_resource path="res://assets/fonts/Oxanium-SemiBold.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://assets/general_font_theme.tres" type="Theme" id=9]
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 9, 35 )
@@ -22,13 +22,6 @@ extents = Vector2( 13.1875, 384.5 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 640, 12.5 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 30
-font_data = ExtResource( 9 )
-
-[sub_resource type="Theme" id=6]
-default_font = SubResource( 5 )
 
 [node name="Pong" type="Node2D"]
 
@@ -129,7 +122,7 @@ margin_left = 78.0
 margin_top = 39.0
 margin_right = 323.0
 margin_bottom = 70.0
-theme = SubResource( 6 )
+theme = ExtResource( 9 )
 text = "Player 1 Score :"
 script = ExtResource( 3 )
 
@@ -138,6 +131,6 @@ margin_left = 979.0
 margin_top = 39.0
 margin_right = 1231.0
 margin_bottom = 70.0
-theme = SubResource( 6 )
+theme = ExtResource( 9 )
 text = "Player 2 Score :"
 script = ExtResource( 3 )
