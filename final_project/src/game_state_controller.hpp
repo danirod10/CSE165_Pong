@@ -54,7 +54,28 @@ private:
 
 public:
 
+	/*C++ constructor and destructor
+	Generally not super used in this project
+	Godot functions can't be called in a C++ 
+	constructor I believe and memory is generally automatically
+	managed by Godot*/
+	GameStateController(){};
+
+	/*
+	Note I don't need to call delete on any of these pointers because I'm not really creating
+	any new nodes here, I'm getting pre-existing nodes so Godot should be handling everything
+	based on what I know, I believe godot::Ref<T> could also be used to automatically manage memory too
+
+	Okay after some testing here I can safely say that deleting those pointers to my nodes causes some nice errors that
+	the Godot debugger doesn't like one bit. You're just gonna have to trust me and maybe read the documentation
+	too when I say I don't need to clean up any pointers here
+	*/
+	~GameStateController(){};
+
+	//Godot constructor
 	void _init(){};
+
+	//methods
     void _ready();
 	void _input(godot::Ref<godot::InputEvent> event);
 	void _on_end_game(godot::String goal_name);

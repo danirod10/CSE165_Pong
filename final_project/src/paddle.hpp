@@ -24,7 +24,20 @@ private:
 	real_t screen_size_y;
 
 public:
+
+	/*C++ constructor and destructor
+	Generally not super used in this project
+	Godot functions can't be called in a C++ 
+	constructor I believe and memory is generally automatically
+	managed by Godot*/
+	Paddle(){};
+	~Paddle(){};
+
+
+	//Godot constructor
 	void _init(){};
+
+	//methods
 	void _ready();
 	void _process(const double delta);
 	void _on_area_entered(Ball *ptr_area);

@@ -69,6 +69,7 @@ void GameStateController::_ready(){
     game_play_music = get_node<AudioStreamPlayer>("GameplayMusic");
     toggle_music_button = get_node<CheckButton>("SettingsScreen/SettingsContainer/GridContainer/MusicLevels");
     toggle_music_button->connect("toggled", this, "_on_toggle_music");
+    is_music_on = true;
  }
 
 
@@ -163,15 +164,19 @@ void GameStateController::_on_restart_game(){
 void GameStateController::_on_toggle_music(bool turn_music_on){
     if(turn_music_on && !is_game_over){
         game_play_music->_set_playing(true);
+        is_music_on = true;
     }
     else if(turn_music_on && is_game_over){
         game_over_music->_set_playing(true);
+        is_music_on = true;
     }
     else if(!turn_music_on && !is_game_over){
         game_play_music->_set_playing(false);
+        is_music_on = false;
     }
     else if(!turn_music_on && is_game_over){
         game_over_music->_set_playing(false);
+        is_music_on = false;
     }
 }
 

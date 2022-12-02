@@ -15,7 +15,19 @@ private:
 
 public:
 
+	/*C++ constructor and destructor
+	Generally not super used in this project
+	Godot functions can't be called in a C++ 
+	constructor I believe and memory is generally automatically
+	managed by Godot*/
+	Score(){};
+	~Score(){};
+
+
+	//Godot constructor
 	void _init(){};
+
+	//methods
     void _ready();
 	void _on_update_score(int new_score, godot::String wall_name);
 
