@@ -5,6 +5,8 @@
 #include <CanvasLayer.hpp>
 #include <AudioStreamPlayer.hpp>
 #include <Button.hpp>
+#include <CheckButton.hpp>
+#include <InputEvent.hpp>
 #include <Godot.hpp>
 
 
@@ -34,16 +36,30 @@ private:
 	//standard godot nodes
 	godot::SceneTree* root;
     godot::CanvasLayer* game_over_screen;
+	godot::CanvasLayer* settings_screen;
     godot::AudioStreamPlayer* game_over_music;
+	godot::AudioStreamPlayer* game_play_music;
 	godot::Label* game_over_text;
 	godot::Button* restart_button;
+	godot::CheckButton* toggle_music_button;
+
+
+	//need this a singlton for _input()
+	godot::Input* input;
+
+	//base type vars
+	bool settings_menu_visible;
+	bool is_game_over;
+	bool is_music_on;
 
 public:
 
 	void _init(){};
     void _ready();
+	void _input(godot::Ref<godot::InputEvent> event);
 	void _on_end_game(godot::String goal_name);
 	void _on_restart_game();
+	void _on_toggle_music(bool turn_music_on);
 
 	static void _register_methods();
 };

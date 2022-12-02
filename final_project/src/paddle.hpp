@@ -16,12 +16,12 @@ private:
 	const int MOVE_SPEED = 500;
 	
 	
-	godot::String _up;
-	godot::String _down;
-	godot::Input *_input;
-	godot::Ref<godot::RandomNumberGenerator> _random;
+	godot::String up;
+	godot::String down;
+	godot::Input* input;
+	godot::Ref<godot::RandomNumberGenerator> random;
 	godot::Vector2 initial_pos;
-	real_t _screen_size_y;
+	real_t screen_size_y;
 
 public:
 	void _init(){};
