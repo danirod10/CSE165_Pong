@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/music/Fluffing a Duck - Kevin MacLeod.mp3" type="AudioStream" id=1]
+[ext_resource path="res://assets/music/Militaire Electronic - Kevin MacLeod.mp3" type="AudioStream" id=2]
+[ext_resource path="res://gdnativescripts/music_player.gdns" type="Script" id=3]
+
+[node name="Music" type="Node"]
+script = ExtResource( 3 )
+
+[node name="GameplayMusic" type="AudioStreamPlayer" parent="."]
+pause_mode = 1
+stream = ExtResource( 2 )
+autoplay = true
+
+[node name="GameoverMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )

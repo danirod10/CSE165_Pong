@@ -1,4 +1,4 @@
-#include "score.hpp"
+#include "score.h"
 
 using namespace godot;
 

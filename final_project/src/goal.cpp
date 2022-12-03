@@ -1,4 +1,4 @@
-#include "goal.hpp"
+#include "goal.h"
 
 using namespace godot;
 

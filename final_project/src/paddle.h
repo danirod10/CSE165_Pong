@@ -6,7 +6,7 @@
 #include <Input.hpp>
 #include <RandomNumberGenerator.hpp>
 
-#include "ball.hpp"
+#include "ball.h"
 
 class Paddle : public godot::Area2D {
 private:

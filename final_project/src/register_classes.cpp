@@ -1,11 +1,11 @@
 #include <Godot.hpp>
 
-#include "ball.hpp"
-#include "wall.hpp"
-#include "paddle.hpp"
-#include "goal.hpp"
-#include "score.hpp"
-#include "game_state_controller.hpp"
+/*
+everything runs is included in game_state_controller
+since I use game_state_controller as the script to handle linking
+every signal together
+*/
+#include "game_state_controller.h"
 
 
 using namespace godot;
@@ -25,5 +25,6 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void *handle) {
 	register_class<Paddle>();
 	register_class<Goal>();
 	register_class<Score>();
+	register_class<MusicPlayer>();
 	register_class<GameStateController>();
 }

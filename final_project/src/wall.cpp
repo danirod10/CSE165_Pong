@@ -1,4 +1,4 @@
-#include "wall.hpp"
+#include "wall.h"
 
 using namespace godot;
 

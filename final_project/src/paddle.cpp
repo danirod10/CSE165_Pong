@@ -1,4 +1,4 @@
-#include "paddle.hpp"
+#include "paddle.h"
 
 using namespace godot;
 

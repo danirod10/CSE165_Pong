@@ -4,7 +4,7 @@
 #include <Area2D.hpp>
 #include <Godot.hpp>
 
-#include "ball.hpp"
+#include "ball.h"
 
 class Wall : public godot::Area2D {
 private:
