@@ -22,15 +22,10 @@ void Ball::_ready() {
 }
 
 void Ball::_process(const double p_delta) {
-	/*wrapped in !motion_paused if statement so that when reseting things and 
-	unpausing the Ball with the Scene Tree the ball still won't move
-	until I tell it to*/
-	if(!motion_paused){ 
-		speed += (real_t)p_delta * 2;
-		Vector2 position = get_position();
-		position += speed * (real_t)p_delta * direction;
-		set_position(position);
-	}
+	speed += (real_t)p_delta * 2;
+	Vector2 position = get_position();
+	position += speed * (real_t)p_delta * direction;
+	set_position(position);
 }
 
 void Ball::reset() {
@@ -48,21 +43,10 @@ void Ball::set_direction(Vector2 new_direction){
 	direction = new_direction;
 }
 
-Vector2 Ball::get_initial_position(){
-	return initial_pos;
-}
-
-void Ball::set_initial_position(Vector2 new_initial_pos){
-	initial_pos = new_initial_pos;
-}
 
 
-bool Ball::get_motion_paused(){
-	return motion_paused;
-}
-void Ball::set_motion_paused(bool b){
-	motion_paused = b;
-}
+
+
 
 void Ball::_register_methods() {
 	register_method("_ready", &Ball::_ready);
@@ -70,9 +54,5 @@ void Ball::_register_methods() {
 	register_method("reset", &Ball::reset);
 	register_method("get_direction", &Ball::get_direction);
 	register_method("set_direction", &Ball::set_direction);
-	register_method("get_initial_position", &Ball::get_initial_position);
-	register_method("set_initial_position", &Ball::set_initial_position);
-	register_method("get_motion_paused", &Ball::get_motion_paused);
-	register_method("set_motion_paused", &Ball::set_motion_paused);
 	register_property<Ball, Vector2>("DEFAULT_DIRECTION", &Ball::DEFAULT_DIRECTION, Vector2(-1, 0));
 }

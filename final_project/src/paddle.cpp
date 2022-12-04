@@ -56,18 +56,9 @@ void Paddle::reset() {
 	set_position(initial_pos);
 }
 
-Vector2 Paddle::get_initial_position(){
-	return initial_pos;
-}
-
-void Paddle::set_initial_position(Vector2 new_initial_pos){
-	initial_pos = new_initial_pos;
-}
 
 void Paddle::_register_methods() {
 	register_method("_ready", &Paddle::_ready);
 	register_method("_process", &Paddle::_process);
 	register_method("_on_area_entered", &Paddle::_on_area_entered);
-	register_method("get_initial_position", &Paddle::get_initial_position);
-	register_method("set_initial_position", &Paddle::set_initial_position);
 }

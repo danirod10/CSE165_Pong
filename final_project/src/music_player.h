@@ -34,7 +34,7 @@ public:
 
 	//methods
     void _ready();
-	void _change_track();
+	void _change_track(bool game_state);
     void _on_music_toggled(bool turn_music_on);
 
 

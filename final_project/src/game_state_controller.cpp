@@ -59,7 +59,6 @@ void GameStateController::_ready(){
     restart_button = get_node<Button>("GameOverControl/GameOverScreen/RestartButton");
     restart_button->connect("pressed", this,"_on_restart_game");
 
-
     //preps to open settings menu
     settings_screen = get_node<CanvasLayer>("SettingsControl/SettingsScreen");
     settings_menu_visible = false;
@@ -70,6 +69,9 @@ void GameStateController::_ready(){
     toggle_music_button = get_node<CheckButton>("SettingsControl/SettingsScreen/SettingsContainer/GridContainer/MusicLevels");
     toggle_music_button->connect("toggled", game_play_music, "_on_music_toggled");
     this->connect("change_track", game_play_music, "_change_track");
+
+    //used to make sure scene tree stays paused when needed
+    is_game_over = false;
  }
 
 
@@ -81,7 +83,10 @@ void GameStateController::_input(Ref<InputEvent> event){
             settings_menu_visible = true;
         }
         else{
-            root->set_pause(false);
+            //don't want things unpaused if game is over
+            if(!is_game_over){
+                root->set_pause(false);
+            }
             settings_screen->set_visible(false);
             settings_menu_visible = false;
         }
@@ -90,16 +95,13 @@ void GameStateController::_input(Ref<InputEvent> event){
 
 
 void GameStateController::_on_end_game(String goal_name){
+    is_game_over = true;
 
-    //Currently not needed, however I might need it depending on how I want to impliment things
-    //Remember to delete later if unused
-    ptr_ball1->set_motion_paused(true);
-    ptr_ball2->set_motion_paused(true);
-
-    //Need to emit a signal to change the music. Why this is I couldn't begin to tell you
-    //but it absolutly dies and breaks if I call the _change_track() directly
-    //why it broke I could not say, but this is the workaround
-    emit_signal("change_track");
+    //Need to emit a signal to change the music.
+    //it absolutly dies and breaks if I call the _change_track() directly
+    //Not sure what is different about what I'm doing that breaks it
+    //however this method works
+    emit_signal("change_track", is_game_over);
 
     //Pauses every single node except for the ones I have whitelisted to run no matter what
     //Will pause all of pong.tscn + the node GameplayMusic and will allow the remaining nodes/scenes 
@@ -107,7 +109,6 @@ void GameStateController::_on_end_game(String goal_name){
     //however the _process functions of Ball and Paddle are the ones we really want to stop
     //signals still work and custom functions still work
     root->set_pause(true);
-
 
     //will display the winner of the game
     if(goal_name == "RightGoal"){
@@ -117,20 +118,14 @@ void GameStateController::_on_end_game(String goal_name){
         game_over_text->set_text("Player 2 Wins!");
     }
 
-
-
     //shows the canvas layer that functions as the game over screen
     game_over_screen->set_visible(true);
-
-    
 
 }
 
 void GameStateController::_on_restart_game(){
+    is_game_over = false;
 
-    
-
-    
     //resets score, updates the label too since set_score emits the signal update_score
     ptr_left_goal->set_score(0);
     ptr_right_goal->set_score(0);
@@ -140,25 +135,18 @@ void GameStateController::_on_restart_game(){
     ptr_ball2->reset();
     ptr_player1->reset();
     ptr_player2->reset();
-
-
     
+    //Need to emit a signal to change the music.
+    //it absolutly dies and breaks if I call the _change_track() directly
+    //Not sure what is different about what I'm doing that breaks it
+    //however this method works
+    emit_signal("change_track", is_game_over);
 
-    // //called second to last just so players don't see the reset
     game_over_screen->set_visible(false);
 
     root->set_pause(false);
-    emit_signal("change_track");
-    
-    //Currently not needed, however I might need it depending on how I want to impliment things
-    //Remember to delete later if unused
-    ptr_ball1->set_motion_paused(false);
-    ptr_ball2->set_motion_paused(false);
-
-
 
 }
-
 
 
 
@@ -169,5 +157,5 @@ void GameStateController::_register_methods(){
     register_method("_input", &GameStateController::_input);
     register_method("_on_end_game", &GameStateController::_on_end_game);
     register_method("_on_restart_game", &GameStateController::_on_restart_game);
-    register_signal<GameStateController>((char*)"change_track");
+    register_signal<GameStateController>((char*)"change_track", "Is Game Over", GODOT_VARIANT_TYPE_BOOL);
 }

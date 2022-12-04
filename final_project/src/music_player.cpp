@@ -13,11 +13,22 @@ void MusicPlayer::_ready(){
 }
 
 //methods
-void MusicPlayer::_change_track(){
+void MusicPlayer::_change_track(bool game_state){
+    //change track is called whenever game ends or restarts, since those are the only two times 
+    //just make is_game_over the reverse of what it was before
+    is_game_over = game_state;
+
+    //now if music is on it will switch the tracks playing
+    //if music is off then _on_music_toggled will handle everything
+    // properly and change tracks when music is turned back on
     if(is_music_on){
-        is_game_over = !is_game_over;
         game_over_music->_set_playing(is_game_over);
-        game_play_music->_set_playing(is_game_over);
+        game_play_music->_set_playing(!is_game_over);
+    }
+    //makes sure both are off
+    else{
+        game_over_music->_set_playing(false);
+        game_play_music->_set_playing(false);
     }
 }
 
@@ -31,11 +42,9 @@ void MusicPlayer::_on_music_toggled(bool turn_music_on){
         game_over_music->_set_playing(true);
         is_music_on = true;
     }
-    else if(!turn_music_on && !is_game_over){
+    //turns music off
+    else{
         game_play_music->_set_playing(false);
-        is_music_on = false;
-    }
-    else if(!turn_music_on && is_game_over){
         game_over_music->_set_playing(false);
         is_music_on = false;
     }

@@ -50,6 +50,9 @@ private:
 
 	//base type vars
 	bool settings_menu_visible;
+	/*used to make sure the root->set_pause(false) isn't called in _input()
+	when the game is over*/
+	bool is_game_over;
 
 public:
 

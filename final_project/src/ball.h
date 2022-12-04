@@ -41,11 +41,6 @@ public:
 	void reset();
 	godot::Vector2 get_direction();
 	void set_direction(godot::Vector2 new_direction);
-	godot::Vector2 get_initial_position();
-	void set_initial_position(godot::Vector2 new_inital_pos);
-	bool get_motion_paused();
-	void set_motion_paused(bool b);
-
 
 	static void _register_methods();
 };
