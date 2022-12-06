@@ -9,10 +9,8 @@ void Goal::_init(){
 
 
 void Goal::_on_goal_area_entered(Ball* ptr_ball) {
-	//Totally breaks if I don't have the if statment checking for the balls's name
-	//No clue why and I can't find documentation on it, so I can't remove it
+	//Resets the ball
 	if ((ptr_ball->get_name() == "Ball1") || (ptr_ball->get_name() == "Ball2")) {
-		// Ball went out of game area, reset.
 		ptr_ball->reset();
 
 		//calls for score update

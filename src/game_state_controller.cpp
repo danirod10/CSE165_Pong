@@ -36,11 +36,11 @@ void GameStateController::_ready(){
     ptr_left_goal->connect("update_score",ptr_player2_score,"_on_update_score");
 
     //handles the signal connections for the player
-    ptr_player1 = get_node<Paddle>("Pong/Player1");
-    ptr_player1->connect("area_entered",ptr_player1,"_on_area_entered");
+    ptr_player1 = get_node<Player>("Pong/Player1");
+    ptr_player1->connect("area_entered",ptr_player1,"_on_player_area_entered");
 
-	ptr_player2 = get_node<Paddle>("Pong/Player2");
-    ptr_player2->connect("area_entered",ptr_player2,"_on_area_entered");
+	ptr_player2 = get_node<Player>("Pong/Player2");
+    ptr_player2->connect("area_entered",ptr_player2,"_on_player_area_entered");
 
     //handling signal connections for the walls
     Wall* ptr_ceiling = get_node<Wall>("Pong/Ceiling");
@@ -106,7 +106,7 @@ void GameStateController::_on_end_game(String goal_name){
     //Pauses every single node except for the ones I have whitelisted to run no matter what
     //Will pause all of pong.tscn + the node GameplayMusic and will allow the remaining nodes/scenes 
     //in main.tscn to run, this specifically pauses _process() funcions and other similar ones
-    //however the _process functions of Ball and Paddle are the ones we really want to stop
+    //however the _process functions of Ball and Player are the ones we really want to stop
     //signals still work and custom functions still work
     root->set_pause(true);
 

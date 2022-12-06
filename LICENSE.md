@@ -39,7 +39,7 @@ proper documentation of the game engine and the third party software it uses.
     Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 ## GDNative Tutorials:
-Some of our code is from the GDNative Tutorials, and our Scons files is taken from them (which makes our build set up similar). So we have included the licensing for it (even though it's the same license and through the Godot)
+Some of our code is from the GDNative Tutorials, and our Scons files is taken from them (which makes our build set up similar). So we have included the licensing for it (even though it's the same license and through Godot)
 
 
     Copyright (c) 2007-2020 Juan Linietsky, Ariel Manzur.

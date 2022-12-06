@@ -1,5 +1,5 @@
-#ifndef PADDLE_H
-#define PADDLE_H
+#ifndef PLAYER_H
+#define PLAYER_H
 
 #include <Area2D.hpp>
 #include <Godot.hpp>
@@ -8,18 +8,18 @@
 
 #include "ball.h"
 
-class Paddle : public godot::Area2D {
+class Player : public godot::Area2D {
 private:
-	GODOT_CLASS(Paddle, godot::Area2D)
+	GODOT_CLASS(Player, godot::Area2D)
 
 
-	const int MOVE_SPEED = 500;
+	const int MOVE_SPEED = 750;
 	
 	
 	godot::String up;
 	godot::String down;
 	godot::Input* input;
-	godot::Ref<godot::RandomNumberGenerator> random;
+	godot::Ref<godot::RandomNumberGenerator> random_y_component;
 	godot::Vector2 initial_pos;
 	real_t screen_size_y;
 
@@ -30,8 +30,8 @@ public:
 	Godot functions can't be called in a C++ 
 	constructor I believe and memory is generally automatically
 	managed by Godot*/
-	Paddle(){};
-	~Paddle(){};
+	Player(){};
+	~Player(){};
 
 
 	//Godot constructor
@@ -40,7 +40,7 @@ public:
 	//methods
 	void _ready();
 	void _process(const double delta);
-	void _on_area_entered(Ball *ptr_area);
+	void _on_player_area_entered(Ball *ptr_area);
 	void reset();
 
 	static void _register_methods();

@@ -3,22 +3,28 @@
 using namespace godot;
 
 void Ball::_init(){
-	//Initializes the defaults
-	//my set up in Godot breaks if I don't do this
 	speed = DEFAULT_SPEED;
-	motion_paused = false;
-	DEFAULT_DIRECTION = Vector2(-1, 0);
-	direction = DEFAULT_DIRECTION;
 }
 
 void Ball::_ready() {
-	initial_pos = get_position();
-	
-	//Allows for Defaults to be updated if changed by Godot's Editor
-	//Means I don't have do derive a bunch of different class
-	//to make different speeds or default values if I 
-	//want to make multiple unique ping-pong balls
-	direction = DEFAULT_DIRECTION;
+	initial_pos = get_position();	
+	random_direction_component = (Ref<RandomNumberGenerator>)RandomNumberGenerator::_new();
+	random_direction_component->randomize();
+	/*creates a random integer between 1 and -1 by randomly generating an integer between 1 and 0, multiplying it by 2 and then subtracting by 1
+	chose an integer because I don't want it to ever be zero as an X component to start since I want it to go towards one of the 
+	two goals no matter what. Also since the y-component can be a 0.0 I don't want to accidently crash things
+	by trying to normalize a zero vector*/ 
+	rand_x_direction = random_direction_component->randi_range(0, 1) * 2 - 1;
+
+	/*randfn() generates a normally distributed float with the defaults of 0.0 mean and 1 standard deviation
+	I chose a normal distribution because I want it to be a random start but stay closer to a 0 y-component
+	and I made the standard deviation .125 since I didn't want it to have two extream an angle*/
+	rand_y_direction = random_direction_component->randfn(0.0, 0.125);
+
+	direction = Vector2(rand_x_direction, rand_y_direction);
+
+	//normalized since it is our direction vector
+	direction.normalize();
 }
 
 void Ball::_process(const double p_delta) {
@@ -29,7 +35,12 @@ void Ball::_process(const double p_delta) {
 }
 
 void Ball::reset() {
-	direction = DEFAULT_DIRECTION;
+	//generates new random vector components and then assigns them to the direction vector and then normalizes vector
+	rand_x_direction = random_direction_component->randi_range(0, 1) * 2 - 1;
+	rand_y_direction = random_direction_component->randfn(0.0, 0.125);
+	direction = Vector2(rand_x_direction, rand_y_direction);
+	direction.normalize();
+
 	set_position(initial_pos);
 	speed = DEFAULT_SPEED;
 }
@@ -54,5 +65,4 @@ void Ball::_register_methods() {
 	register_method("reset", &Ball::reset);
 	register_method("get_direction", &Ball::get_direction);
 	register_method("set_direction", &Ball::set_direction);
-	register_property<Ball, Vector2>("DEFAULT_DIRECTION", &Ball::DEFAULT_DIRECTION, Vector2(-1, 0));
 }

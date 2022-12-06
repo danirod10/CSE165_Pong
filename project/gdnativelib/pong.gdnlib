@@ -7,12 +7,12 @@ reloadable=true
 
 [entry]
 
-Windows.64="res://gdnativelib/windows/libpong.dll"
-X11.64="res://gdnativelib/linux/libpong.so"
-OSX.64="res://gdnativelib/osx/libpong.dylib"
+OSX.64="res://gdnativelib/osx/lib_cse165_pong.dylib"
+Windows.64="res://gdnativelib/windows/lib_cse165_pong.dll"
+X11.64="res://gdnativelib/linux/lib_cse165_pong.so"
 
 [dependencies]
 
+OSX.64=[  ]
 Windows.64=[  ]
 X11.64=[  ]
-OSX.64=[  ]

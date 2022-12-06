@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://gdnativescripts/paddle.gdns" type="Script" id=1]
+[ext_resource path="res://gdnativescripts/player.gdns" type="Script" id=1]
 [ext_resource path="res://assets/images/player.svg" type="Texture" id=2]
 [ext_resource path="res://gdnativescripts/score.gdns" type="Script" id=3]
 [ext_resource path="res://gdnativescripts/ball.gdns" type="Script" id=4]
@@ -58,7 +58,6 @@ shape = SubResource( 9 )
 position = Vector2( 640, 360 )
 z_index = 1
 script = ExtResource( 4 )
-DEFAULT_DIRECTION = Vector2( 1, 0 )
 
 [node name="Sprite" type="Sprite" parent="Ball1"]
 scale = Vector2( 0.1, 0.1 )

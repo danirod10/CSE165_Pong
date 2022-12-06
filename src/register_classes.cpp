@@ -22,7 +22,7 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void *handle) {
 	Godot::nativescript_init(handle);
 	register_class<Ball>();
 	register_class<Wall>();
-	register_class<Paddle>();
+	register_class<Player>();
 	register_class<Goal>();
 	register_class<Score>();
 	register_class<MusicPlayer>();

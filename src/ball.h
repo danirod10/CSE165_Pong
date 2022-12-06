@@ -2,6 +2,7 @@
 #define BALL_H
 
 #include <Area2D.hpp>
+#include <RandomNumberGenerator.hpp>
 #include <Godot.hpp>
 
 class Ball : public godot::Area2D {
@@ -10,17 +11,14 @@ private:
 	
 
 	const real_t DEFAULT_SPEED = 500;
-	//Default Direction is not a const because I wanted
-	//to make it accessable to Godot's engine so I can change 
-	//default direction for different Ball's without making a new class
-	//however this code won't be changing it
-	godot::Vector2 DEFAULT_DIRECTION;
 
 
-	bool motion_paused;
 	real_t speed;
 	godot::Vector2 initial_pos;
 	godot::Vector2 direction;
+	godot::Ref<godot::RandomNumberGenerator> random_direction_component;
+	real_t rand_x_direction;
+	real_t rand_y_direction;
 public:
 
 	/*C++ constructor and destructor

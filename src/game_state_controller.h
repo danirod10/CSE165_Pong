@@ -13,7 +13,7 @@
 #include "goal.h"
 #include "wall.h"
 #include "score.h"
-#include "paddle.h"
+#include "player.h"
 #include "ball.h"
 #include "music_player.h"
 
@@ -29,8 +29,8 @@ private:
 	Wall* ptr_floor;
 	Score* ptr_player1_score;
 	Score* ptr_player2_score;
-	Paddle* ptr_player1;
-	Paddle* ptr_player2;
+	Player* ptr_player1;
+	Player* ptr_player2;
 	Ball* ptr_ball1;
 	Ball* ptr_ball2;
 	MusicPlayer* game_play_music;
