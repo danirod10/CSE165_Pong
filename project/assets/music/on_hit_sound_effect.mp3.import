@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/on_hit_sound_effect.mp3-876f25bbd7a45ba880c436bd48bc89bd.mp3str"
+
+[deps]
+
+source_file="res://assets/music/on_hit_sound_effect.mp3"
+dest_files=[ "res://.import/on_hit_sound_effect.mp3-876f25bbd7a45ba880c436bd48bc89bd.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

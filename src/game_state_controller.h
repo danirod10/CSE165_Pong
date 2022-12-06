@@ -16,6 +16,7 @@
 #include "player.h"
 #include "ball.h"
 #include "music_player.h"
+#include "sfx_player.h"
 
 
 class GameStateController : public godot::Node {
@@ -43,6 +44,7 @@ private:
 	godot::Label* game_over_text;
 	godot::Button* restart_button;
 	godot::CheckButton* toggle_music_button;
+	godot::CheckButton* toggle_sfx_button;
 
 
 	//need this a singlton for _input()

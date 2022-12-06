@@ -70,6 +70,11 @@ void GameStateController::_ready(){
     toggle_music_button->connect("toggled", game_play_music, "_on_music_toggled");
     this->connect("change_track", game_play_music, "_change_track");
 
+    //sets up ability to turn off SFX
+    toggle_sfx_button = get_node<CheckButton>("SettingsControl/SettingsScreen/SettingsContainer/GridContainer/SFXLevels");
+    toggle_sfx_button->connect("toggled", ptr_ball1->sound_effects, "_on_sfx_toggled");
+    toggle_sfx_button->connect("toggled", ptr_ball2->sound_effects, "_on_sfx_toggled");
+
     //used to make sure scene tree stays paused when needed
     is_game_over = false;
  }

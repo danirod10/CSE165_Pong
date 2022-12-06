@@ -26,5 +26,6 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void *handle) {
 	register_class<Goal>();
 	register_class<Score>();
 	register_class<MusicPlayer>();
+	register_class<SFXPlayer>();
 	register_class<GameStateController>();
 }

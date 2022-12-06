@@ -50,6 +50,8 @@ void Player::_on_player_area_entered(Ball* ptr_ball) {
 		normalizes the vector so that the ball is set to the proper speed in Ball::_process()*/
 		Vector2 new_direction = Vector2(-(cur_direction.x), random_y_component->randf() * 2 - 1).normalized();
 		ptr_ball->set_direction(new_direction);
+
+		ptr_ball->sound_effects->_on_play_sfx();
 	}
 }
 

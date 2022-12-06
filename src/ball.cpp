@@ -25,6 +25,10 @@ void Ball::_ready() {
 
 	//normalized since it is our direction vector
 	direction.normalize();
+
+
+	//initalizes our SFX
+	sound_effects = get_node<SFXPlayer>("SFX");
 }
 
 void Ball::_process(const double p_delta) {

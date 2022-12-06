@@ -5,6 +5,8 @@
 #include <RandomNumberGenerator.hpp>
 #include <Godot.hpp>
 
+#include "sfx_player.h"
+
 class Ball : public godot::Area2D {
 private:
 	GODOT_CLASS(Ball, godot::Area2D)
@@ -19,7 +21,13 @@ private:
 	godot::Ref<godot::RandomNumberGenerator> random_direction_component;
 	real_t rand_x_direction;
 	real_t rand_y_direction;
+
+
 public:
+	//will be used to handle sound effects
+	//set to public so I can easily call it's functions
+	SFXPlayer* sound_effects;
+
 
 	/*C++ constructor and destructor
 	Generally not super used in this project

@@ -17,6 +17,8 @@ void Wall::_on_wall_area_entered(Ball* ptr_ball) {
 		//normalizes it just in case
 		new_direction.normalize();
 		ptr_ball->set_direction(new_direction);
+		
+		ptr_ball->sound_effects->_on_play_sfx();
 	}
 }
 

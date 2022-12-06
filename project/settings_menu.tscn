@@ -8,7 +8,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="SettingsScreen" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Modal" type="ColorRect" parent="SettingsScreen"]
 margin_right = 40.0
@@ -53,3 +52,11 @@ margin_bottom = 107.0
 theme = ExtResource( 1 )
 pressed = true
 text = "  Music"
+
+[node name="SFXLevels" type="CheckButton" parent="SettingsScreen/SettingsContainer/GridContainer"]
+margin_top = 127.0
+margin_right = 203.0
+margin_bottom = 163.0
+theme = ExtResource( 1 )
+pressed = true
+text = "  SFX"
