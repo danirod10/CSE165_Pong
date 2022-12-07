@@ -14,7 +14,7 @@ void Ball::_ready() {
 	chose an integer because I don't want it to ever be zero as an X component to start since I want it to go towards one of the 
 	two goals no matter what. Also since the y-component can be a 0.0 I don't want to accidently crash things
 	by trying to normalize a zero vector*/ 
-	rand_x_direction = random_direction_component->randi_range(0, 1) * 2 - 1;
+	rand_x_direction = static_cast<real_t>(random_direction_component->randi_range(0, 1)) * 2 - 1;
 
 	/*randfn() generates a normally distributed float with the defaults of 0.0 mean and 1 standard deviation
 	I chose a normal distribution because I want it to be a random start but stay closer to a 0 y-component
@@ -32,15 +32,15 @@ void Ball::_ready() {
 }
 
 void Ball::_process(const double p_delta) {
-	speed += (real_t)p_delta * 2;
+	speed += p_delta * 0.1 * speed;
 	Vector2 position = get_position();
-	position += speed * (real_t)p_delta * direction;
+	position += static_cast<real_t>(speed) * static_cast<real_t>(p_delta) * direction;
 	set_position(position);
 }
 
 void Ball::reset() {
 	//generates new random vector components and then assigns them to the direction vector and then normalizes vector
-	rand_x_direction = random_direction_component->randi_range(0, 1) * 2 - 1;
+	rand_x_direction = static_cast<real_t>(random_direction_component->randi_range(0, 1)) * 2 - 1;
 	rand_y_direction = random_direction_component->randfn(0.0, 0.125);
 	direction = Vector2(rand_x_direction, rand_y_direction);
 	direction.normalize();
@@ -57,7 +57,6 @@ Vector2 Ball::get_direction(){
 void Ball::set_direction(Vector2 new_direction){
 	direction = new_direction;
 }
-
 
 
 

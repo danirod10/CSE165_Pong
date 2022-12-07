@@ -12,20 +12,23 @@ private:
 	GODOT_CLASS(Ball, godot::Area2D)
 	
 
-	const real_t DEFAULT_SPEED = 500;
+	const double DEFAULT_SPEED = 500;
 
 
-	real_t speed;
+	double speed;
 	godot::Vector2 initial_pos;
 	godot::Vector2 direction;
+	//wrapped in a godot::Ref because in theory that should handle the memory properly
 	godot::Ref<godot::RandomNumberGenerator> random_direction_component;
 	real_t rand_x_direction;
 	real_t rand_y_direction;
 
 
 public:
-	//will be used to handle sound effects
-	//set to public so I can easily call it's functions
+	/*will be used to handle sound effects.
+	set to public so I can easily call it's functions
+	and so I only have to call get_node once
+	*/
 	SFXPlayer* sound_effects;
 
 

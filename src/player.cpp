@@ -37,7 +37,7 @@ void Player::_process(const double delta) {
 	//math tells me that the bounds needed for this clamp function to keep my player fully on screen is 34.4
 	//to be exact I divided the height of the player.svg by 2 since the sprite + collision box is centered
 	//on the Player1 and Player2 nodes and then multipled that value by .1 since that was the scale factor applied in the editor to get 34.4
-	position.y = (real_t)Math::clamp(position.y + keyboard_input * MOVE_SPEED * delta, 34.4, screen_size_y - 34.4);
+	position.y = static_cast<real_t>(Math::clamp(position.y + keyboard_input * MOVE_SPEED * delta, 34.4, screen_size_y - 34.4));
 	set_position(position);
 }
 

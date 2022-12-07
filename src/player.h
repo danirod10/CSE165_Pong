@@ -19,6 +19,7 @@ private:
 	godot::String up;
 	godot::String down;
 	godot::Input* input;
+	//wrapped in a godot::Ref because in theory that should handle the memory properly
 	godot::Ref<godot::RandomNumberGenerator> random_y_component;
 	godot::Vector2 initial_pos;
 	real_t screen_size_y;
