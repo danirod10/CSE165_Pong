@@ -9,8 +9,11 @@ void Goal::_init(){
 
 
 void Goal::_on_goal_area_entered(Ball* ptr_ball) {
-	//Resets the ball
+	/*since my collision boxes of the goals overlap a tiny bit with my wall's collision boxes this checks that 
+	the proper object has been sent, the game will crash if I don't do this because it will try to call
+	->reset() on something that doesn't have that function.*/
 	if ((ptr_ball->get_name() == "Ball1") || (ptr_ball->get_name() == "Ball2")) {
+		//The ball went our of bounds so we must reset it
 		ptr_ball->reset();
 
 		//calls for score update
@@ -38,10 +41,23 @@ int Goal::get_score(){
 
 void Goal::set_score(int new_score){
 	score = new_score;
-	//Testing something here
+	
+	/*when we call set_score in game_state_controller.cpp
+	we obviously want our scores to update too*/
 	emit_signal("update_score",score, this->get_name());
+	
+	/*
+	technically we're never going to enter a score of 5 or greater but it doesn't hurt to add this, since we'd want 
+	a similar response to updating the score through update_score() as we would set_score()
+	*/
+	if(score >= 5){
+		//The class GameStateController handels this signal
+		emit_signal("end_game", this->get_name());
+	}
 }
 
+
+//Registers the classes so Godot use them
 void Goal::_register_methods() {
 
 	register_method("_on_goal_area_entered", &Goal::_on_goal_area_entered);

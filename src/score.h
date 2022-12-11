@@ -31,7 +31,7 @@ public:
     void _ready();
 	void _on_update_score(int new_score, godot::String wall_name);
 
-
+	//Registers the classes so Godot use them
 	static void _register_methods();
 };
 

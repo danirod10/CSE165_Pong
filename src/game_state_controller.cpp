@@ -12,8 +12,8 @@ by Godot when all of the children have been created so it should always get the 
 
 So far this method hasn't failed me
 
-Technically I can do most of this in the Godot Editor but at the end of the day
-the assignment was to use C++ to build a game so I'll do it here
+Technically we can do most of this in the Godot Editor but at the end of the day
+the assignment was to use C++ to build a game so we'll do it here
 */
 void GameStateController::_ready(){
     //prep for singal connections for the goals
@@ -156,7 +156,7 @@ void GameStateController::_on_restart_game(){
 
 
 
-
+//Registers the classes so Godot use them
 void GameStateController::_register_methods(){
     register_method("_ready", &GameStateController::_ready);
     register_method("_input", &GameStateController::_input);

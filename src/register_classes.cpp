@@ -10,6 +10,8 @@ every signal together
 
 using namespace godot;
 
+/*This entire section is following the Godot's tutorials on how to use GDNative C++*/
+
 extern "C" void GDN_EXPORT godot_gdnative_init(godot_gdnative_init_options *o) {
 	Godot::gdnative_init(o);
 }

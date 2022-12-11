@@ -46,11 +46,12 @@ public:
 
 	//methods
 	void _ready();
-	void _process(const double p_delta);
+	void _process(const double delta);
 	void reset();
 	godot::Vector2 get_direction();
 	void set_direction(godot::Vector2 new_direction);
 
+	//Registers the classes so Godot use them
 	static void _register_methods();
 };
 

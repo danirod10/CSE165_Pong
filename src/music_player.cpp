@@ -50,6 +50,7 @@ void MusicPlayer::_on_music_toggled(bool turn_music_on){
     }
 }
 
+//Registers the classes so Godot use them
 void MusicPlayer::_register_methods(){
     register_method("_ready", &MusicPlayer::_ready);
     register_method("_change_track", &MusicPlayer::_change_track);

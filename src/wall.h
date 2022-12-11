@@ -26,6 +26,7 @@ public:
 	//methods
 	void _on_wall_area_entered(Ball *ptr_ball);
 
+	//Registers the classes so Godot use them
 	static void _register_methods();
 };
 

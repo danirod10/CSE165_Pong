@@ -37,7 +37,7 @@ public:
 	void _change_track(bool game_state);
     void _on_music_toggled(bool turn_music_on);
 
-
+	//Registers the classes so Godot use them
 	static void _register_methods();
 };
 

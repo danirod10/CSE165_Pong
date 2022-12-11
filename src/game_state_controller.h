@@ -85,6 +85,7 @@ public:
 	void _on_end_game(godot::String goal_name);
 	void _on_restart_game();
 
+	//Registers the classes so Godot use them
 	static void _register_methods();
 };
 

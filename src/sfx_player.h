@@ -34,7 +34,7 @@ public:
     void _on_play_sfx();
     void _on_sfx_toggled(bool turn_sfx_on);
 
-
+	//Registers the classes so Godot use them
 	static void _register_methods();
 };
 

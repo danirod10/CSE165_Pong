@@ -44,6 +44,7 @@ public:
 	void _on_player_area_entered(Ball *ptr_area);
 	void reset();
 
+	//Registers the classes so Godot use them
 	static void _register_methods();
 };
 

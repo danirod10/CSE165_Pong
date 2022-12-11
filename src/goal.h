@@ -34,6 +34,7 @@ public:
 	int get_score();
 	void set_score(int new_score);
 
+	//Registers the classes so Godot use them
 	static void _register_methods();
 };
 

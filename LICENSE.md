@@ -39,7 +39,8 @@ proper documentation of the game engine and the third party software it uses.
     Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 ## GDNative Tutorials:
-Some of our code is from the GDNative Tutorials, and our Scons files is taken from them (which makes our build set up similar). So we have included the licensing for it (even though it's the same license and through Godot)
+Our Scons files is taken from the GDNative Tutorials,(which makes our build set up similar). So we have included the licensing for it (even though it's the same license and through Godot). We slightly modified it to meet our build path but it is mostly the same. We also used their .git ignore to keep our git repo clean, which was also modified to 
+keep executable files out of the repo as well. 
 
 
     Copyright (c) 2007-2020 Juan Linietsky, Ariel Manzur.
@@ -68,7 +69,7 @@ Some of our code is from the GDNative Tutorials, and our Scons files is taken fr
     Artist: http://incompetech.com/
 
 ## Fonts:
-Font used is: Oxanium-SemiBold, it is released under Open Font License. 
+Font used is: Oxanium, it is released under Open Font License. 
 The License text for it is stored in final_project/project/assests/fonts/LICENSE.txt
 Find it at [https://sev.dev/fonts/oxanium/](https://sev.dev/fonts/oxanium/) or at
 [https://www.dafont.com/oxanium.font](https://www.dafont.com/oxanium.font)
