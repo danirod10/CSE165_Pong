@@ -40,7 +40,7 @@ proper documentation of the game engine and the third party software it uses.
 
 ## GDNative Tutorials:
 Our Scons files is taken from the GDNative Tutorials,(which makes our build set up similar). So we have included the licensing for it (even though it's the same license and through Godot). We slightly modified it to meet our build path but it is mostly the same. We also used their .git ignore to keep our git repo clean, which was also modified to 
-keep executable files out of the repo as well. 
+keep executable & resource files out of the repo as well. 
 
 
     Copyright (c) 2007-2020 Juan Linietsky, Ariel Manzur.
@@ -75,4 +75,5 @@ Find it at [https://sev.dev/fonts/oxanium/](https://sev.dev/fonts/oxanium/) or a
 [https://www.dafont.com/oxanium.font](https://www.dafont.com/oxanium.font)
 
 ## Images:
-All of the images used were made by Kieran Pfann in Inkscape. As of right now there is no licensing on them
+All of the image assets used were made by Kieran Pfann in Inkscape. As of right now there is no licensing on them, they're just a ball and some rectangles, I feel 
+no need to to slap a license on them since they're very simple.
