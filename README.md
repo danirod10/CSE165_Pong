@@ -52,18 +52,18 @@ Next open the terminal and use the command:
 ```
  cd /path/to/CSE165_Pong/final_project 
 ```
-to get to the proper directory where you can use SCons to compile the library using:
+to get to the proper directory where you can use SCons to compile the of the library using one of two commands:
 
 ```
 scons platform=PLATFORM 
 ```
-to compile the debug version or
+
 ```
 scons platform=PLATFORM target=release
 ```
-to compile the release version
 
-Where PLATFORM is: `windows`, `linux`, or `osx`.
+Where PLATFORM is: `windows`, `linux`, or `osx`. And target is what version we want to compile, if we want the debug version we can leave target out since the default
+is target=debug, however if we want to compile the dynamic library for the release version we must add target=release.
 
 What this does is complie our cpp files in CSE165\_Pong/src along with CSE165\_Pong/godot-cpp and
 creates a dynamic library in CSE165\_Pong/project/gdnative/platform that then can be accessed by
