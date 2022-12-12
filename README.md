@@ -55,8 +55,13 @@ Next open the terminal and use the command:
 to get to the proper directory where you can use SCons to compile the library using:
 
 ```
-scons platform=PLATFORM
+scons platform=PLATFORM 
 ```
+to compile the debug version or
+```
+scons platform=PLATFORM target=release
+```
+to compile the release version
 
 Where PLATFORM is: `windows`, `linux`, or `osx`.
 
@@ -69,7 +74,7 @@ then the .gdns files are attacted to the proper objects in pong.tscn. You should
 yourself using the godot editor installed earlier, or by opening the .tscn files in a text editor since .tscn files are human readable.
 
 The final step is to open the godot editor, import the project, and then go to project settings, click
-export and export the project to the platform you're computer is running on.
+export and export the project to the platform you're computer is running on and make sure to export the proper version(either Debug or Release)
 
 
 This creates the file `Pong_project.[appropriate executable file type]` 
